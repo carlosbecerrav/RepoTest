@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Utilities {
 	
@@ -18,6 +19,11 @@ public class Utilities {
 		return driver;
 	}
 	
+	public WebDriverWait configureWait(WebDriver driver, WebDriverWait wait) {
+		wait = new WebDriverWait(driver,10);
+		return wait;
+	}
+	
 	public void clickElement(String xpath, WebDriver driver) {
 		driver.findElement(By.xpath(xpath)).click();
 	}
@@ -28,6 +34,10 @@ public class Utilities {
 	
 	public void closeWebDriver(WebDriver driver) {
 		driver.quit();
+	}
+	
+	public void TypeInSearchBar(WebDriver driver,String SearchBar, String text) {
+		driver.findElement(By.xpath(SearchBar)).sendKeys(text);
 	}
 	
 

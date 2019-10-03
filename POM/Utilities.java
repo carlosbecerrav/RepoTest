@@ -30,5 +30,12 @@ public class Utilities {
 		driver.quit();
 	}
 	
+	public void playFirstResult(String xpath, WebDriver driver) {
+		clickElement(xpath, driver)
+	 }
+	  
+	public void sendKeys(WebDriver driver, String keys, String xpath) {
+		driver.findElement(By.xpath(xpath)).sendkeys(keys);
+	}
 
 }
